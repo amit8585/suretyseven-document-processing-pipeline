@@ -1,0 +1,33 @@
+{
+  "name": "suretyseven-document-processing-backend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Document processing API and worker for the SuretySeven SDE-1 assignment",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "start:worker": "node src/workers/index.js",
+    "dev": "node --watch src/server.js",
+    "dev:worker": "node --watch src/workers/index.js",
+    "migrate": "node src/db/migrate.js",
+    "test": "jest --runInBand --forceExit",
+    "test:coverage": "jest --runInBand --forceExit --coverage"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "bullmq": "^5.34.5",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "ioredis": "^5.4.2",
+    "multer": "^1.4.5-lts.1",
+    "pg": "^8.13.1",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0"
+  }
+}
