@@ -34,7 +34,7 @@ PostgreSQL     Local file storage     Redis / BullMQ
                                       PostgreSQL
 ```
 
-See [docs/architecture.png](docs/architecture.png) and [docs/architecture.svg](docs/architecture.svg).
+See [docs/architecture.png](docs/architecture.png).
 
 The API accepts uploads, stores the file and database row, writes an `UPLOADED` history event, enqueues a BullMQ job, and returns immediately. A separate worker consumes the job, calls the mock processor, validates extracted data, and updates status/history.
 
